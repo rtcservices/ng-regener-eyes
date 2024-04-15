@@ -7,9 +7,9 @@ export const PAGE_ROUTES: Route[] = [
   {
     path: '',
     children: [
-      { path: '', component: HomeComponent },
-      { path: 'about', component: AboutUsComponent },
-      { path: 'contact', component: ContactUsComponent },
+      { path: '', component: HomeComponent, title: 'Home' },
+      { path: 'about', component: AboutUsComponent, title: 'About Us' },
+      { path: 'contact', component: ContactUsComponent, title: 'Contact Us' },
     ],
   },
 ];

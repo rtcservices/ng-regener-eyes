@@ -8,6 +8,11 @@ export const routes: Routes = [
       import('./pages/page.routes').then((mod) => mod.PAGE_ROUTES),
   },
 
-  { path: '', redirectTo: '/heroes', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent },
+  {
+    path: '',
+    redirectTo: '/heroes',
+    pathMatch: 'full',
+    title: 'Page Not Found',
+  },
+  { path: '**', component: PageNotFoundComponent, title: '404' },
 ];
