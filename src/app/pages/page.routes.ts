@@ -7,8 +7,12 @@ export const PAGE_ROUTES: Route[] = [
   {
     path: '',
     children: [
-      { path: '', component: HomeComponent, title: 'Home' },
-      { path: 'about', component: AboutUsComponent, title: 'About Us' },
+      {
+        path: '',
+        component: HomeComponent,
+        title: 'Vision Enhanced = Life Renewed',
+      },
+      { path: 'our-vision', component: AboutUsComponent, title: 'Our Vision' },
       { path: 'contact', component: ContactUsComponent, title: 'Contact Us' },
     ],
   },

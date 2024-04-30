@@ -1,0 +1,31 @@
+p {
+  text-align: justify;
+}
+p + p {
+  margin-top: 1rem;
+}
+.home-title {
+  .home-title-data {
+    padding: 2rem;
+  }
+  .home-title-image {
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+@media (max-width: 767.98px) {
+  .home-title-image {
+    display: none;
+  }
+}
+@media (max-width: 991.98px) {
+  .home-title-data {
+    order: 2;
+  }
+  .home-title-image {
+    order: 1;
+  }
+}

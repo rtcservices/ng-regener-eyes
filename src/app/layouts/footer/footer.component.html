@@ -1,11 +1,35 @@
 <footer>
-  <section>
-    <nav>
-      <ul>
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/about">About Us</a></li>
-        <li><a routerLink="/contact">Contact Us</a></li>
-      </ul>
-    </nav>
-  </section>
+  <div class="container">
+    <div class="d-md-flex justify-content-between d-block">
+      <section>
+        <figure class="figure">
+          <img src="/assets/images/regener-eyes-logo.png"
+               class="figure-img img-fluid rounded"
+               alt="regener-eyes">
+          <figcaption>
+            <small class="fs-6">
+              We Develop & Market Electronic Eyewear for People With Vision Deficits.
+            </small>
+          </figcaption>
+        </figure>
+      </section>
+      <hr class="d-block d-sm-none">
+      <section class="footer-link">
+        <ul role="list">
+          <li><a routerLink="/">Home</a></li>
+          <li><a routerLink="/our-vision">Our Vision</a></li>
+          <li><a routerLink="/contact">Contact Us</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <p class="text-center">
+    <small class="footer-copy">
+      &copy; Copyright Regener Eyes - {{currentYear}} |
+      Powered by
+      <a href="https://qelabs.in"
+         target="_blank"
+         rel="external">QE Labs</a>.
+    </small>
+  </p>
 </footer>

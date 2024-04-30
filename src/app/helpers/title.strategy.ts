@@ -12,7 +12,7 @@ export class TemplatePageTitleStrategy extends TitleStrategy {
   override updateTitle(routerState: RouterStateSnapshot) {
     const title = this.buildTitle(routerState);
     if (title !== undefined) {
-      this.title.setTitle(`${environment.appName} - ${title}`);
+      this.title.setTitle(`${environment.appName} | ${title}`);
     }
   }
 }

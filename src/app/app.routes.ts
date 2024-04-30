@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
   {
@@ -7,12 +7,5 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./pages/page.routes').then((mod) => mod.PAGE_ROUTES),
   },
-
-  {
-    path: '',
-    redirectTo: '/heroes',
-    pathMatch: 'full',
-    title: 'Page Not Found',
-  },
-  { path: '**', component: PageNotFoundComponent, title: '404' },
+  { path: '**', component: PageNotFoundComponent, title: 'Page Not Found' },
 ];

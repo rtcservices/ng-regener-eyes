@@ -1,9 +1,41 @@
 <header>
-  <nav>
-    <ul>
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/about">About Us</a></li>
-      <li><a routerLink="/contact">Contact Us</a></li>
-    </ul>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand"
+         routerLink="/">
+        <figure class="figure">
+          <img src="/assets/images/regener-eyes-logo-with-caption.png"
+               class="figure-img img-fluid rounded"
+               alt="regener-eyes">
+        </figure>
+      </a>
+      <button class="navbar-toggler"
+              type="button"
+              (click)="toggleCollapseMenu()"
+              title="Navbar Collapse">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse"
+           [(ngbCollapse)]="isCollapsedMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/"
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{ exact: true }">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/our-vision"
+               routerLinkActive="active">Our Vision</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"
+               routerLink="/contact"
+               routerLinkActive="active">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 </header>

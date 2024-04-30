@@ -1,0 +1,20 @@
+.figure > img {
+  height: 3rem;
+}
+.navbar-toggler {
+  background-color: var(--clr-primary-500);
+  i {
+    color: var(--clr-white);
+  }
+}
+.nav-link {
+  font-size: 1.125rem;
+  &:hover,
+  &.active {
+    color: var(--clr-primary-500);
+    font-weight: 500;
+  }
+  &.active {
+    border-bottom: 2px solid var(--clr-primary-500);
+  }
+}

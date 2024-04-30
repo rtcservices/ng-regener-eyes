@@ -3,5 +3,99 @@
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
 :root {
-  --site-bg: hsl(120, 100%, 97%);
+  --color-scheme: light;
+  --font-family: system-ui;
+
+  --fs-500: clamp(1.13rem, calc(1.06rem + 0.33vw), 1.31rem);
+
+  --clr-white-300: hsl(0, 0%, 70%);
+  --clr-white-400: hsl(0, 0%, 90%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-dark: hsl(0, 0%, 0%);
+  --clr-primary-400: hsl(206, 76%, 40%);
+  --clr-primary-500: hsl(206, 95%, 31%);
+  --clr-primary-600: hsl(206, 99%, 20%);
+  --clr-primary-700: hsl(206, 100%, 10%);
+  --clr-secondary-400: hsl(94, 50%, 50%);
+  --clr-secondary-500: hsl(95, 50%, 43%);
+  --clr-secondary-600: hsl(94, 50%, 25%);
+  --clr-accent-400: hsl(21, 72%, 50%);
+  --clr-accent-500: hsl(21, 100%, 50%);
+  --clr-accent-600: hsl(21, 100%, 30%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: var(--color-scheme);
+  font-size: 16px;
+}
+
+body {
+  background: linear-gradient(-45deg, var(--clr-white), var(--clr-white-400));
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+  margin: 0;
+}
+ul[role="list"] {
+  list-style-type: none;
+}
+.clr-primary {
+  color: var(--clr-primary-500);
+}
+.clr-secondary {
+  color: var(--clr-secondary-500);
+}
+.clr-accent {
+  color: var(--clr-accent-500);
+}
+.primary-bg {
+  background-color: var(--clr-primary-700);
+  color: var(--clr-white);
+}
+.equal-row {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
+.shadow-box {
+  border-radius: 1.25rem;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  padding: 2rem;
+  margin: 2rem auto;
+}
+@media (min-width: 1200px) {
+  body {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1400px) {
+  body {
+    font-size: 1.3rem;
+  }
 }
