@@ -4,16 +4,66 @@ p {
 p + p {
   margin-top: 1rem;
 }
-.home-title {
-  .home-title-data {
-    padding: 2rem;
-  }
-  .home-title-image {
-    img {
+.benefits-row {
+  > div {
+    text-align: justify;
+    padding: 0.5rem;
+    > div {
+      border-radius: 0.5rem;
+      border: 1px solid rgb(0 0 0 / 0.2);
       height: 100%;
-      width: 100%;
-      object-fit: cover;
+      padding: 0.5rem;
+      transition: all 150ms ease-in-out;
+      &:hover {
+        background-color: var(--clr-white);
+        box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.5);
+        transform: scale(1.01);
+        z-index: 10;
+      }
+      p,
+      h3 {
+        margin: 1rem;
+      }
+      h3 {
+        font-size: 1.5rem;
+        height: 4rem;
+        text-align: center;
+      }
+      p {
+        font-size: 1rem;
+      }
     }
+    .centered-icon {
+      text-align: center;
+      i {
+        font-size: 4rem;
+      }
+    }
+  }
+  &:hover > div:not(:hover) {
+    opacity: 0.5;
+  }
+}
+.problem-solution {
+  > .row {
+    margin-bottom: 0.5rem;
+    max-height: 50rem;
+  }
+  > .row > div {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.styled-list {
+  li:before {
+    position: absolute;
+    content: "\e90f";
+    font-family: "icomoon";
+    font-size: 16px;
+    left: 0px;
+    top: 0px;
+    color: var(--clr-primary-500);
   }
 }
 @media (max-width: 767.98px) {

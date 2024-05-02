@@ -2,6 +2,7 @@
 
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
+@import "assets/css/icomoon.css";
 :root {
   --color-scheme: light;
   --font-family: system-ui;
@@ -40,6 +41,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
+  scroll-behavior: smooth;
 }
 @keyframes gradient {
   0% {
@@ -78,16 +80,14 @@ ul[role="list"] {
   background-color: var(--clr-primary-700);
   color: var(--clr-white);
 }
-.equal-row {
-  display: grid;
-  grid-auto-rows: 1fr;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+.cover-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .shadow-box {
   border-radius: 1.25rem;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  padding: 2rem;
-  margin: 2rem auto;
+  box-shadow: 2px 2px 15px 5px rgb(0 0 0 / 0.2);
 }
 @media (min-width: 1200px) {
   body {
