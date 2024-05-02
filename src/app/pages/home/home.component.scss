@@ -47,23 +47,43 @@ p + p {
 .problem-solution {
   > .row {
     margin-bottom: 0.5rem;
-    max-height: 50rem;
   }
   > .row > div {
     padding: 0;
     margin: 0;
+    > img {
+      max-height: 25rem;
+    }
+    > div {
+      > h2 {
+        flex-basis: 60px;
+        padding-bottom: 10px;
+      }
+      > ul {
+        flex-basis: calc(100% - 60px);
+      }
+    }
   }
 }
-
 .styled-list {
-  li:before {
-    position: absolute;
-    content: "\e90f";
-    font-family: "icomoon";
-    font-size: 16px;
-    left: 0px;
-    top: 0px;
-    color: var(--clr-primary-500);
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  li {
+    position: relative;
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.625rem;
+    padding-left: 1.5rem;
+    &:before {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      content: "\e90f";
+      color: var(--clr-primary-500);
+      font-family: "icomoon";
+      font-size: 1rem;
+    }
   }
 }
 @media (max-width: 767.98px) {

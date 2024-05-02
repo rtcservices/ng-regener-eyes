@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { AboutUsComponent } from './about-us/about-us.component';
+import { OurVisionComponent } from './our-vision/our-vision.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 
 export const PAGE_ROUTES: Route[] = [
@@ -12,7 +12,11 @@ export const PAGE_ROUTES: Route[] = [
         component: HomeComponent,
         title: 'Vision Enhanced = Life Renewed',
       },
-      { path: 'our-vision', component: AboutUsComponent, title: 'Our Vision' },
+      {
+        path: 'our-vision',
+        component: OurVisionComponent,
+        title: 'Our Vision',
+      },
       { path: 'contact', component: ContactUsComponent, title: 'Contact Us' },
     ],
   },
