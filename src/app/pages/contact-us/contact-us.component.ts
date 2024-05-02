@@ -1,10 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { MetaService } from '../../services/meta.service';
+import { InnerPageTitleComponent } from '../../components/inner-page-title/inner-page-title.component';
 
 @Component({
   selector: 'app-contact-us',
   standalone: true,
-  imports: [],
+  imports: [InnerPageTitleComponent],
   templateUrl: './contact-us.component.html',
   styleUrl: './contact-us.component.scss',
 })

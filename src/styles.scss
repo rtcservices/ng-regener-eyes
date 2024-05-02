@@ -9,6 +9,7 @@
 
   --fs-500: clamp(1.13rem, calc(1.06rem + 0.33vw), 1.31rem);
 
+  --clr-white-rgba3: rgba(255, 255, 0, 0.3);
   --clr-white-300: hsl(0, 0%, 70%);
   --clr-white-400: hsl(0, 0%, 90%);
   --clr-white: hsl(0, 0%, 100%);
@@ -64,7 +65,6 @@ p,
 figure {
   margin: 0;
 }
-
 .clr-primary {
   color: var(--clr-primary-500);
 }
@@ -75,6 +75,10 @@ figure {
   color: var(--clr-accent-500);
 }
 .primary-bg {
+  background-color: var(--clr-primary-500);
+  color: var(--clr-white);
+}
+.primary-bg-700 {
   background-color: var(--clr-primary-700);
   color: var(--clr-white);
 }

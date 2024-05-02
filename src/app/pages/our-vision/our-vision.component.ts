@@ -1,10 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { MetaService } from '../../services/meta.service';
+import { InnerPageTitleComponent } from '../../components/inner-page-title/inner-page-title.component';
 
 @Component({
   selector: 'app-our-vision',
   standalone: true,
-  imports: [],
+  imports: [InnerPageTitleComponent],
   templateUrl: './our-vision.component.html',
   styleUrl: './our-vision.component.scss',
 })

@@ -1,0 +1,23 @@
+.inner-page-title {
+  background-color: var(--clr-white-rgb3);
+  margin: 0;
+  padding: 0;
+  .breadcrumb {
+    .breadcrumb-item {
+      color: var(--clr-primary-500);
+      a {
+        text-decoration: none;
+        color: var(--clr-primary-500);
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      &.active {
+        font-weight: 700;
+      }
+    }
+  }
+  img {
+    max-height: 20rem;
+  }
+}
