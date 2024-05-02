@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/ng-regener-eyes/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
