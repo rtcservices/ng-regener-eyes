@@ -10,7 +10,8 @@ export const PAGE_ROUTES: Route[] = [
       {
         path: '',
         component: HomeComponent,
-        title: 'Vision Enhanced = Life Renewed',
+        title:
+          'Vision Enhanced = Life Renewed | Empowering and enabling people with vision deficits through development of innovative solutions',
       },
       {
         path: 'our-vision',
