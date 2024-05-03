@@ -14,6 +14,7 @@
   --clr-white-400: hsl(0, 0%, 90%);
   --clr-white: hsl(0, 0%, 100%);
   --clr-dark: hsl(0, 0%, 0%);
+  --clr-red: hsl(0, 100%, 50%);
   --clr-primary-400: hsl(206, 76%, 40%);
   --clr-primary-500: hsl(206, 95%, 31%);
   --clr-primary-600: hsl(206, 99%, 20%);
@@ -38,7 +39,7 @@ html {
 }
 
 body {
-  background: linear-gradient(-45deg, var(--clr-white), var(--clr-white-400));
+  background: var(--clr-white);
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
@@ -74,6 +75,17 @@ figure {
 .clr-accent {
   color: var(--clr-accent-500);
 }
+.primary-button,
+.primary-button:active,
+.primary-button:disabled,
+.primary-button:hover {
+  background-color: var(--clr-primary-500);
+  color: var(--clr-white);
+}
+.primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
 .primary-bg {
   background-color: var(--clr-primary-500);
   color: var(--clr-white);
@@ -81,6 +93,9 @@ figure {
 .primary-bg-700 {
   background-color: var(--clr-primary-700);
   color: var(--clr-white);
+}
+.required-indicator {
+  color: var(--clr-red);
 }
 .cover-img {
   height: 100%;

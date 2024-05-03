@@ -13,11 +13,11 @@ p + p {
       border: 1px solid rgb(0 0 0 / 0.2);
       height: 100%;
       padding: 0.5rem;
-      transition: all 150ms ease-in-out;
+      transition: all 500ms ease-in-out;
       &:hover {
         background-color: var(--clr-white);
         box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.5);
-        transform: scale(1.01);
+        transform: scale(1.05);
         z-index: 10;
       }
       p,
