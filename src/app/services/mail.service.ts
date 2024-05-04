@@ -5,9 +5,9 @@ import { ContactModel } from '../models/contact-model';
   providedIn: 'root',
 })
 export class MailService {
-  constructor() {}
+  constructor() { }
 
   sendMail(model: ContactModel) {
-    // send in whatever format that was used previously
+
   }
 }
