@@ -46,6 +46,11 @@ export class ContactUsComponent implements OnInit {
         },
         (error) => {
           console.log('FAILED...', (error as EmailJSResponseStatus).text);
+          Swal.fire({
+            title: 'Error Occoured',
+            text: 'Please try again!',
+            icon: 'error',
+          })
         },
       );
   }
