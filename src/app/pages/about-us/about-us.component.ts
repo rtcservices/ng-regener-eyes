@@ -3,19 +3,19 @@ import { MetaService } from '../../services/meta.service';
 import { InnerPageTitleComponent } from '../../components/inner-page-title/inner-page-title.component';
 
 @Component({
-  selector: 'app-our-vision',
+  selector: 'app-about-us',
   standalone: true,
   imports: [InnerPageTitleComponent],
-  templateUrl: './our-vision.component.html',
-  styleUrl: './our-vision.component.scss',
+  templateUrl: './about-us.component.html',
+  styleUrl: './about-us.component.scss',
 })
-export class OurVisionComponent implements OnInit {
+export class AboutUsComponent implements OnInit {
   private metaService = inject(MetaService);
   ngOnInit(): void {
     this.metaService.updateMeta({
-      slug: 'our-vision',
+      slug: 'about-us',
       description:
-        'Regener Eyes | Our Vision | Empowering individuals to take control of their vision health, enabling them to prioritize what truly matters in life is our vision.',
+        'Regener Eyes | About Us | Empowering individuals to take control of their vision health, enabling them to prioritize what truly matters in life is About Us.',
     });
   }
 }
