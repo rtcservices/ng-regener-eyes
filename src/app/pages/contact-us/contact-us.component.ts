@@ -5,6 +5,8 @@ import { MetaService } from '../../services/meta.service';
 import { InnerPageTitleComponent } from '../../components/inner-page-title/inner-page-title.component';
 import { ContactModel } from '../../models/contact-model';
 import { PageService } from '../../services/page.service';
+import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-contact-us',
@@ -27,20 +29,29 @@ export class ContactUsComponent implements OnInit {
     });
   }
 
-  onSubmit(f: NgForm) {
-    console.log(f.valid);
-    if (f.valid) {
-      this.model = {
-        name: f.value.username,
-        email: f.value.useremail,
-        phone: f.value.userphone,
-        title: f.value.messagetitle,
-        message: f.value.message,
-      };
-
-      this.mailService.sendMail(this.model);
-    } else {
-      alert('Please fill all required fields');
-    }
+  public sendEmail(e: Event,f:any) {
+    emailjs
+      .sendForm('service_e7me0ep', 'template_xo38wtx', e.target as HTMLFormElement, {
+        publicKey: 'Vie5TSh5xDUKqwJUk',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          Swal.fire({
+            title: 'Message Sent!',
+            text: 'Thank you for contacting, we will contact you!',
+            icon: 'success',
+          })
+          f.reset()
+        },
+        (error) => {
+          console.log('FAILED...', (error as EmailJSResponseStatus).text);
+          Swal.fire({
+            title: 'Error Occoured',
+            text: 'Please try again!',
+            icon: 'error',
+          })
+        },
+      );
   }
 }
