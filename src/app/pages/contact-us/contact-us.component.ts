@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { MailService } from '../../services/mail.service';
 import { MetaService } from '../../services/meta.service';
@@ -6,7 +6,10 @@ import { InnerPageTitleComponent } from '../../components/inner-page-title/inner
 import { ContactModel } from '../../models/contact-model';
 import { PageService } from '../../services/page.service';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
-import Swal from 'sweetalert2'
+import { ToastService } from '../../services/toast.service';
+import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgTemplateOutlet } from '@angular/common';
+
 
 @Component({
   selector: 'app-contact-us',
@@ -14,12 +17,13 @@ import Swal from 'sweetalert2'
   imports: [InnerPageTitleComponent, FormsModule],
   templateUrl: './contact-us.component.html',
   styleUrl: './contact-us.component.scss',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ContactUsComponent implements OnInit {
   private metaService = inject(MetaService);
   private mailService = inject(MailService);
   private page = inject(PageService);
-
+  public toast = inject(ToastService);
   private model!: ContactModel;
   ngOnInit(): void {
     this.metaService.updateMeta({
@@ -37,21 +41,15 @@ export class ContactUsComponent implements OnInit {
       .then(
         () => {
           console.log('SUCCESS!');
-          Swal.fire({
-            title: 'Message Sent!',
-            text: 'Thank you for contacting, we will contact you!',
-            icon: 'success',
-          })
-          f.reset()
+          this.toast.show('Thank you for contacting, we will contact you!',{ classname: 'bg-success text-light', delay: 10000 })
+         f.reset()
         },
         (error) => {
           console.log('FAILED...', (error as EmailJSResponseStatus).text);
-          Swal.fire({
-            title: 'Error Occoured',
-            text: 'Please try again!',
-            icon: 'error',
-          })
+          this.toast.show('Error Occoured, Please try again!',{ classname: 'bg-danger text-light', delay: 10000 })
+          
         },
       );
   }
+
 }

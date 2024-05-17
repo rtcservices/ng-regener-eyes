@@ -5,6 +5,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { AsyncPipe, DOCUMENT, ViewportScroller } from '@angular/common';
 import { Observable, fromEvent, map } from 'rxjs';
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
+import { ToastsContainer } from './helpers/toast';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.c
     HeaderComponent,
     FooterComponent,
     ScrollToTopComponent,
+    ToastsContainer
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
