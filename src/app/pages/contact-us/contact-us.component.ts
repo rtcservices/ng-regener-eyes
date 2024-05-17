@@ -38,7 +38,7 @@ export class ContactUsComponent implements OnInit {
   }
 
   public sendEmail(e: Event,f:any) {
-    this.loaderService.loader = true;
+    this.loaderService.showLoader();
     this.buttonText = "Sending Message";
     emailjs
       .sendForm('service_e7me0ep', 'template_xo38wtx', e.target as HTMLFormElement, {
@@ -46,7 +46,7 @@ export class ContactUsComponent implements OnInit {
       })
       .then(
         () => {
-          this.loaderService.loader = false;
+          this.loaderService.hideLoader();
           this.toast.show('Thank you for contacting, we will contact you!',{ classname: 'bg-success text-light', delay: 10000 })
           window.scrollBy({
             top: -1,  
@@ -57,7 +57,7 @@ export class ContactUsComponent implements OnInit {
          this.buttonText = "Send Message";
         },
         (error) => {
-          this.loaderService.loader = false;
+          this.loaderService.hideLoader();
           this.toast.show('Error Occoured, Please try again!',{ classname: 'bg-danger text-light', delay: 10000 })
           window.scrollBy({
             top: -1,  
