@@ -9,6 +9,8 @@ import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { ToastService } from '../../services/toast.service';
 import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgTemplateOutlet } from '@angular/common';
+import { ToastsContainer } from '../../helpers/toast';
+import { LoaderService } from '../../services/loader.service';
 
 
 @Component({
@@ -24,7 +26,9 @@ export class ContactUsComponent implements OnInit {
   private mailService = inject(MailService);
   private page = inject(PageService);
   public toast = inject(ToastService);
+  public loaderService = inject(LoaderService);
   private model!: ContactModel;
+  buttonText:any ="Send Message"
   ngOnInit(): void {
     this.metaService.updateMeta({
       slug: 'contact-us',
@@ -34,20 +38,33 @@ export class ContactUsComponent implements OnInit {
   }
 
   public sendEmail(e: Event,f:any) {
+    this.loaderService.loader = true;
+    this.buttonText = "Sending Message";
     emailjs
       .sendForm('service_e7me0ep', 'template_xo38wtx', e.target as HTMLFormElement, {
         publicKey: 'Vie5TSh5xDUKqwJUk',
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          this.loaderService.loader = false;
           this.toast.show('Thank you for contacting, we will contact you!',{ classname: 'bg-success text-light', delay: 10000 })
-         f.reset()
+          window.scrollBy({
+            top: -1,  
+            left: 0,
+            behavior: 'smooth'  
+          });
+          f.reset()
+         this.buttonText = "Send Message";
         },
         (error) => {
-          console.log('FAILED...', (error as EmailJSResponseStatus).text);
+          this.loaderService.loader = false;
           this.toast.show('Error Occoured, Please try again!',{ classname: 'bg-danger text-light', delay: 10000 })
-          
+          window.scrollBy({
+            top: -1,  
+            left: 0,
+            behavior: 'smooth'  
+          });
+          this.buttonText = "Send Message";
         },
       );
   }

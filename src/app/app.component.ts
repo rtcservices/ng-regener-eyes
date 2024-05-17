@@ -6,6 +6,8 @@ import { AsyncPipe, DOCUMENT, ViewportScroller } from '@angular/common';
 import { Observable, fromEvent, map } from 'rxjs';
 import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
 import { ToastsContainer } from './helpers/toast';
+import { LoaderComponent } from './components/loader/loader.component';
+import { LoaderService } from './services/loader.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +18,8 @@ import { ToastsContainer } from './helpers/toast';
     HeaderComponent,
     FooterComponent,
     ScrollToTopComponent,
-    ToastsContainer
+    ToastsContainer,
+    LoaderComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -25,7 +28,7 @@ import { ToastsContainer } from './helpers/toast';
 export class AppComponent {
   private readonly document = inject(DOCUMENT);
   private readonly viewport = inject(ViewportScroller);
-
+ public loaderService = inject(LoaderService)
   readonly showScroll$: Observable<boolean> = fromEvent(
     this.document,
     'scroll'

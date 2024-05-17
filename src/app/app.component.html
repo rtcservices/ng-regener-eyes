@@ -7,3 +7,7 @@
 <app-scroll-to-top (scrollToTop)="onScrollToTop()"></app-scroll-to-top>
 }
 <app-toasts></app-toasts>
+
+@if (loaderService.loader) {
+  <app-loader></app-loader>
+}
