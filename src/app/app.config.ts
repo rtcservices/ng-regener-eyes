@@ -9,7 +9,7 @@ import { TemplatePageTitleStrategy } from './helpers/title.strategy';
 export const appConfig: ApplicationConfig = {
   providers: [
     importProvidersFrom(
-      RouterModule.forRoot(routes), //{ scrollPositionRestoration: 'enabled' }),
+      RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
       BrowserAnimationsModule
     ),
     {
