@@ -4,41 +4,41 @@ p {
 p + p {
   margin-top: 1rem;
 }
-.benefits-row {
-  > div {
-    text-align: justify;
-    padding: 0.5rem;
-    > div {
-      border-radius: 0.5rem;
-      border: 1px solid rgb(0 0 0 / 0.2);
-      height: 100%;
-      padding: 0.5rem;
-      transition: all 500ms ease-in-out;
-      &:hover {
-        background-color: var(--clr-white);
-        box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.5);
-      }
-      p,
-      h3 {
-        margin: 1rem;
-      }
-      h3 {
-        font-size: 1.5rem;
-        height: 4rem;
-        text-align: center;
-      }
-      p {
-        font-size: 1rem;
-      }
-    }
-    .centered-icon {
-      text-align: center;
-      i {
-        font-size: 4rem;
-      }
-    }
-  }
-}
+// .benefits-row {
+//   > div {
+//     text-align: justify;
+//     padding: 0.5rem;
+//     > div {
+//       border-radius: 0.5rem;
+//       border: 1px solid rgb(0 0 0 / 0.2);
+//       height: 100%;
+//       padding: 0.5rem;
+//       transition: all 500ms ease-in-out;
+//       &:hover {
+//         background-color: var(--clr-white);
+//         box-shadow: 2px 2px 15px 5px rgba(0, 0, 0, 0.5);
+//       }
+//       p,
+//       h3 {
+//         margin: 1rem;
+//       }
+//       h3 {
+//         font-size: 1.5rem;
+//         height: 4rem;
+//         text-align: center;
+//       }
+//       p {
+//         font-size: 1rem;
+//       }
+//     }
+//     .centered-icon {
+//       text-align: center;
+//       i {
+//         font-size: 4rem;
+//       }
+//     }
+//   }
+// }
 .problem-solution {
   > .row {
     margin-bottom: 0.5rem;
