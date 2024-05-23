@@ -26,6 +26,7 @@
   --clr-accent-400: hsl(21, 72%, 50%);
   --clr-accent-500: hsl(21, 100%, 50%);
   --clr-accent-600: hsl(21, 100%, 30%);
+  --bg-primary-100: hsl(206, 77%, 95%);
   --bg-primary-500: hsl(206, 77%, 47%);
   --bg-primary-600: hsl(206, 77%, 37%);
   --bg-primary-700: hsl(206, 77%, 27%);
@@ -96,6 +97,9 @@ figure {
 .primary-bg {
   background-color: var(--clr-primary-500);
   color: var(--clr-white);
+}
+.primary-bg-100 {
+  background-color: var(--bg-primary-100);
 }
 .primary-bg-700 {
   background-color: var(--clr-primary-700);
