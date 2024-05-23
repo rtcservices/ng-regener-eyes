@@ -81,6 +81,14 @@ p + p {
     }
   }
 }
+.banner-bg{
+background-image: url('../../../assets/new-images/banner.jpg');
+height: 80vh;
+background-size: cover;
+}
+.logo-title{
+  font-size: 3.5rem;
+}
 @media (max-width: 767.98px) {
   .home-title-image {
     display: none;
